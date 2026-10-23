@@ -5,9 +5,8 @@
   "scripts": {
     "test": "node --test",
     "sync": "node scripts/sync-notion.mjs",
-    "check": "node --check app.js && node --check scripts/sync-notion.mjs && node --test"
+    "notion:check": "node scripts/check-notion.mjs",
+    "check": "node --check app.js && node --check lib/catalog.js && node --check scripts/notion-client.mjs && node --check scripts/sync-notion.mjs && node --check scripts/check-notion.mjs && node --test"
   },
-  "engines": {
-    "node": ">=20"
-  }
+  "engines": {"node": ">=20"}
 }

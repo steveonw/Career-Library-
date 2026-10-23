@@ -1,0 +1,69 @@
+name: Sync fictional stories from Notion
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: 'Publish the imported catalog to main? Default is preview only. FICTIONAL CONTENT ONLY.'
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: career-library-notion-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    env:
+      NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+      NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+      NOTION_DATA_SOURCE_ID: ${{ secrets.NOTION_DATA_SOURCE_ID }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify Notion secrets are configured
+        shell: bash
+        run: |
+          test -n "$NOTION_TOKEN" || { echo "Missing GitHub secret NOTION_TOKEN"; exit 1; }
+          test -n "$NOTION_DATABASE_ID" || test -n "$NOTION_DATA_SOURCE_ID" || { echo "Set NOTION_DATABASE_ID or NOTION_DATA_SOURCE_ID"; exit 1; }
+      - name: Check Notion connection and schema
+        run: npm run notion:check
+      - name: Import Published fictional profiles
+        run: npm run sync
+      - name: Run code and content tests
+        run: npm run check
+      - name: Show change summary
+        shell: bash
+        run: |
+          git diff --stat -- data/profiles.json
+          git status --short
+      - name: Downloadable preview (public demo data only)
+        if: ${{ !inputs.publish }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: notion-preview-catalog
+          path: data/profiles.json
+          retention-days: 2
+      - name: Commit demo catalog to main
+        if: ${{ inputs.publish }}
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/profiles.json
+          if git diff --cached --quiet; then
+            echo "No changes to publish."
+          else
+            git commit -m "Sync fictional published Career Library profiles from Notion"
+            git push origin HEAD:main
+          fi
