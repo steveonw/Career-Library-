@@ -1,0 +1,13 @@
+{
+  "name": "career-library-p0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "sync": "node scripts/sync-notion.mjs",
+    "check": "node --check app.js && node --check scripts/sync-notion.mjs && node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,11 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import {readFile} from "node:fs/promises";
+import {facets,filterProfiles,getProfile,isPublished} from "../lib/catalog.js";
+const samples=JSON.parse(await readFile(new URL("../data/profiles.json",import.meta.url)));
+test("samples are fictional, valid, and use unique slugs",()=>{assert.equal(samples.length,8);assert.ok(samples.every(isPublished));assert.equal(new Set(samples.map(p=>p.slug)).size,samples.length)});
+test("ANDs across filters",()=>{const results=filterProfiles(samples,{major:"Computer Science",field:"Technology"});assert.deepEqual(results.map(p=>p.slug),["maya-chen"])});
+test("search checks skills and matches case-insensitively",()=>{assert.deepEqual(filterProfiles(samples,{search:"  SQL "}).map(p=>p.slug),["noah-williams"])});
+test("unpublished records never leak",()=>{const draft={...samples[0],slug:"draft-record",status:"Draft"};assert.equal(getProfile([draft],"draft-record"),undefined);assert.equal(filterProfiles([...samples,draft]).length,8)});
+test("facet values are deduplicated",()=>{const fs=facets(samples);assert.ok(fs.majors.includes("Psychology"));assert.equal(fs.fields.filter(x=>x==="Technology").length,1)});
+test("invalid slug rejected",()=>assert.equal(isPublished({...samples[0],slug:"../../escape"}),false));
