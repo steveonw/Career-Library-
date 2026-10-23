@@ -22,7 +22,11 @@ python3 -m http.server 8000
 # open http://localhost:8000
 ```
 
-Opening `index.html` using file:// is not supported because browsers block module/data fetches there.
+### Windows quick start
+
+Double-click `START_DEMO.bat` in the cloned repository folder. It starts a local Python server in the correct directory and opens `http://localhost:8000/`. Keep the terminal window open while browsing. Python must be installed. If port 8000 is already used, stop any previous server first.
+
+**Do not double-click `index.html`.** Opening it under `file://` makes browsers block the JavaScript module and JSON fetch, leaving the story directory empty. The address bar must start with `http://localhost:8000/`.
 
 ## Notion setup — optional, private
 
