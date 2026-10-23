@@ -28,43 +28,39 @@ Double-click `START_DEMO.bat` in the cloned repository folder. It starts a local
 
 **Do not double-click `index.html`.** Opening it under `file://` makes browsers block the JavaScript module and JSON fetch, leaving the story directory empty. The address bar must start with `http://localhost:8000/`.
 
-## Notion setup — optional, private
+## Notion publishing — preview first
 
-Create a new Notion data source containing demo-only profiles. Create properties with these **exact** names and types:
+A **Notion-backed publishing demo** is now prepared. Connect it only to a **practice database containing fictional people**. The instructions are in **[docs/NOTION_SETUP.md](docs/NOTION_SETUP.md)**.
 
-| Property | Type |
-| --- | --- |
-| Name | Title |
-| Role | Rich text |
-| Slug | Rich text |
-| Major | Multi-select |
-| Career Field | Select |
-| Experience Level | Select |
-| Interests | Multi-select |
-| Summary | Rich text |
-| Journey | Rich text |
-| Advice | Rich text |
-| Skills | Multi-select |
-| Status | Select (Draft, Published) |
+The shortest path is:
 
-Create a Notion internal integration with read access, share only that demo data source with the integration, and find its data source ID. Set `NOTION_TOKEN` and `NOTION_DATA_SOURCE_ID` as **environment variables** (e.g. load a local ignored `.env`). Then run:
+1. Create the `Career Profiles Demo` database in Notion using the six required properties in the guide.
+2. Make a read-only Notion connection and share that demo database with it.
+3. Store `NOTION_TOKEN` and `NOTION_DATABASE_ID` in **GitHub → Settings → Secrets and variables → Actions**, not in a file or chat.
+4. Run **Actions → Sync fictional stories from Notion** with **publish unchecked** to preview and inspect the generated public catalog.
+5. Only after review, run the workflow again with **publish checked**. Pull the update in GitHub Desktop and refresh the local site.
+
+The workflow uses the Notion 2025-09-03 data-source API and resolves a regular database link automatically. It validates column names/types and required story fields, excludes Draft rows, rejects duplicate slugs, and refuses empty output. No Notion token is sent to browsers.
+
+For developers, a local `NOTION_TOKEN` plus `NOTION_DATABASE_ID` in environment variables allows:
 
 ```sh
-npm run sync
-npm test
+npm run notion:check    # checks API access and schema, does not read stories
+npm run sync            # writes only validated Published stories to data/profiles.json
+npm run check           # syntax and unit tests
 ```
 
-The importer queries the 2025-09-03 Notion data source API, pages through results, validates required fields, rejects duplicate published slugs, and **refuses to overwrite** the sample snapshot when the result is empty. It does not automatically edit Notion.
-
-**Important:** Running the sync replaces the sample JSON file. The generated output is public website content. Use invented profiles only, and review changes before committing. Never store private notes, emails, consent information, tokens, or unpublished content in the public snapshot. The current mapper handles database properties rather than nested Notion page blocks, file uploads, or media.
+**Limitations:** The real Notion integration has not been exercised with credentials yet; the code has mock-API unit tests. Sync is manually triggered, not instant. The output is public JSON, so use fictional text only. Uploaded media, nested Notion blocks and employer-owned profiles are intentionally out of scope for P0.
 
 ## Deployment
 
-This static P0 can run on GitHub Pages (Settings → Pages → Deploy from a branch → main/root). Data is checked into the repository; Notion sync is **manual** until a reviewed GitHub Actions workflow with secrets is configured. No live publishing or automatic revalidation is claimed. This intentionally separates the P0 directory prototype from the later live editorial workflow.
+Static files can be published with **GitHub Pages → Settings → Pages → Deploy from a branch → main / (root)**. The site reads a public JSON snapshot, so a reviewed Notion sync commit updates the deployed content after GitHub Pages rebuilds. A local server needs **Fetch/Pull origin** and a page refresh.
 
-## Scope and next milestone
+## Remaining P0 verification
 
-P0 demonstrates discovery and a safe content adapter, **not** a complete end-to-end publishing system. Next: configure a real demo Notion integration, verify publishing end to end, and add a gated synchronization job. Then consider accessible video links, richer story blocks, SEO-ready static page generation and consent-aware analytics.
+- Live Notion demo integration: create/edit a fictional record → preview → publish → student directory updates.
+- Change Published back to Draft → resync → student directory excludes it.
+- Confirm a mobile viewport and the public GitHub Pages deployment.
 
 ## Development decisions
 
