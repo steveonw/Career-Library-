@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       publish:
-        description: 'Publish the imported catalog to main? Default is preview only. FICTIONAL CONTENT ONLY.'
+        description: 'Publish fictional profiles to main AND GitHub Pages? Default previews only.'
         required: true
         type: boolean
         default: false
@@ -40,21 +40,21 @@ jobs:
         run: npm run notion:check
       - name: Import Published fictional profiles
         run: npm run sync
-      - name: Run code and content tests
+      - name: Run tests and build allowlisted public website
         run: npm run check
       - name: Show change summary
         shell: bash
         run: |
           git diff --stat -- data/profiles.json
           git status --short
-      - name: Downloadable preview (public demo data only)
+      - name: Downloadable preview (fictional data only)
         if: ${{ !inputs.publish }}
         uses: actions/upload-artifact@v4
         with:
           name: notion-preview-catalog
           path: data/profiles.json
           retention-days: 2
-      - name: Commit demo catalog to main
+      - name: Commit fictional public catalog to main
         if: ${{ inputs.publish }}
         shell: bash
         run: |
@@ -62,8 +62,33 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/profiles.json
           if git diff --cached --quiet; then
-            echo "No changes to publish."
+            echo "No catalog changes to commit."
           else
             git commit -m "Sync fictional published Career Library profiles from Notion"
             git push origin HEAD:main
           fi
+      - name: Package the static website for Pages
+        if: ${{ inputs.publish }}
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist/
+          include-hidden-files: true
+
+  deploy:
+    if: ${{ inputs.publish }}
+    needs: sync
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Deploy public demo website
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -61,15 +61,24 @@ GitHub masks configured secrets in workflow logs, but **never intentionally prin
 
 The preview does **not** update your repository's website. If the run fails, read the step that failed; no existing stories are overwritten.
 
-## Step 5 — Publish and verify
+## Step 5 — Deploy and verify the public demo
 
-1. Return to the workflow, choose **Run workflow** again, and check **Publish the imported catalog**.
-2. The workflow syncs only records marked **Published**, verifies the catalog, and commits `data/profiles.json` to your `main` branch if it changed.
-3. In GitHub Desktop, click **Fetch origin → Pull origin**. Refresh your local demo at http://localhost:8000/ (keep your Python server open).
-4. Search for Maya. You should see Maya's Notion-authored text on the website. Lena must remain absent because she is a Draft.
-5. In Notion, change Lena's status to **Published**; repeat the preview/publish runs; Lena should appear. Change to Draft again and republish to confirm unpublishing.
+**First, enable Pages once:** Open https://github.com/steveonw/Career-Library-/settings/pages. Under **Build and deployment → Source**, select **GitHub Actions** (not `Deploy from a branch`). This is necessary because commits from GitHub's built-in Actions token do not automatically trigger a branch-based Pages build. The sync workflow now deploys the same validated content it just imported.
 
-This is a **manual, controlled GitHub Actions sync**, not instant live Notion webhooks. Later, we can add a scheduled sync or an authenticated webhook once the human review flow is validated. The publishing step can be performed in the web UI without code changes.
+1. Open https://github.com/steveonw/Career-Library-/actions/workflows/notion-sync.yml.
+2. Select **Run workflow**, this time check **Publish**, and run it.
+3. The `sync` job validates, builds an allowlisted static bundle, commits only `data/profiles.json` to `main`, and uploads the public website artifact. The `deploy` job deploys that artifact to GitHub Pages.
+4. Once the `deploy` job is green, open **https://steveonw.github.io/Career-Library-/** and verify Maya and Jordan appear. This is a public Internet address; only invented records belong in the demo database.
+5. If working locally, click **Fetch origin → Pull origin** in GitHub Desktop and refresh http://localhost:8000/.
+
+**Test editorial publishing and unpublishing:**
+
+1. Change fictional Lena Park's status in Notion from **Draft** to **Published**.
+2. Run the same **Publish** workflow and verify the public website shows **3** stories.
+3. Change Lena's status back to **Draft**, rerun **Publish**, and verify the website returns to **2** stories. The public JSON snapshot is regenerated each time.
+4. Review the workflow logs and website to show that staff can publish and retract fictional content without editing website code.
+
+The website is deployed from a limited allowlist (`index.html`, `app.js`, `styles.css`, `lib/catalog.js`, `data/profiles.json`). No Notion credentials or development configuration files are included. A future automation could schedule synchronization, but this P0 deliberately retains manual review. Source/UI code updates can be deployed by running the same workflow with **Publish** checked.
 
 ## Troubleshooting
 

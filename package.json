@@ -6,7 +6,10 @@
     "test": "node --test",
     "sync": "node scripts/sync-notion.mjs",
     "notion:check": "node scripts/check-notion.mjs",
-    "check": "node --check app.js && node --check lib/catalog.js && node --check scripts/notion-client.mjs && node --check scripts/sync-notion.mjs && node --check scripts/check-notion.mjs && node --test"
+    "check": "node --check app.js && node --check lib/catalog.js && node --check scripts/notion-client.mjs && node --check scripts/sync-notion.mjs && node --check scripts/check-notion.mjs && node --check scripts/build-pages.mjs && node --test && node scripts/build-pages.mjs",
+    "build:pages": "node scripts/build-pages.mjs"
   },
-  "engines": {"node": ">=20"}
+  "engines": {
+    "node": ">=20"
+  }
 }

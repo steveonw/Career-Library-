@@ -1,6 +1,6 @@
 # Career Library — P0 concept demo
 
-An **independent, not affiliated** concept prototype for the AI-Native Web Intern opportunity. All eight professional stories are **fictional**, and the example content is explicitly labeled as such. Do not represent this as a Career Library production site.
+An **independent, not affiliated** concept prototype for the AI-Native Web Intern opportunity. Every bundled professional story is **fictional**, and the example content is explicitly labeled as such. Do not represent this as a Career Library production site.
 
 ## What works
 
@@ -52,9 +52,13 @@ npm run check           # syntax and unit tests
 
 **Limitations:** The real Notion integration has not been exercised with credentials yet; the code has mock-API unit tests. Sync is manually triggered, not instant. The output is public JSON, so use fictional text only. Uploaded media, nested Notion blocks and employer-owned profiles are intentionally out of scope for P0.
 
-## Deployment
+## Public GitHub Pages demo
 
-Static files can be published with **GitHub Pages → Settings → Pages → Deploy from a branch → main / (root)**. The site reads a public JSON snapshot, so a reviewed Notion sync commit updates the deployed content after GitHub Pages rebuilds. A local server needs **Fetch/Pull origin** and a page refresh.
+The same Notion publishing workflow now builds and deploys the approved **fictional** stories to GitHub Pages. Go to https://github.com/steveonw/Career-Library-/settings/pages and select **GitHub Actions** under **Build and deployment → Source**, then run the **Sync fictional stories from Notion** workflow with **Publish** checked. The sync job creates an allowlisted `dist/` bundle and the deploy job publishes it to https://steveonw.github.io/Career-Library-/.
+
+The public site is accessible only after the GitHub Pages deployment succeeds. Every `Publish` run commits valid Published stories to `data/profiles.json` and updates the public site; preview runs change neither. GitHub Actions `GITHUB_TOKEN` commits don't trigger branch-based Pages builds, hence the explicit deploy job.
+
+Detailed setup and publication/unpublication testing: **[docs/NOTION_SETUP.md](docs/NOTION_SETUP.md)**.
 
 ## Remaining P0 verification
 
