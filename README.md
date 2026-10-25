@@ -2,13 +2,24 @@
 
 An **independent, not affiliated** concept prototype for the AI-Native Web Intern opportunity. Every bundled professional story is **fictional**, and the example content is explicitly labeled as such. Do not represent this as a Career Library production site.
 
+## Current checkpoint and continuation
+
+**As of October 25, 2026, P0 is complete as a working, fictional, independent proof of concept.** The live Notion-backed publish/unpublish test passed and the public catalog contains **Maya Chen** and **Jordan Rivera** (both fictional). Lena Park has been returned to **Draft**.
+
+- **[Updated project plan](docs/PROJECT_PLAN.md)** — P0 evidence, P1 steps for the October 29 application, definitions of done, and P2 production ideas.
+- **[AI handoff sheet](docs/AI_HANDOFF.md)** — ready-to-paste next-agent prompt, exact files/commands, safe publishing, workflows, risks and debugging lessons.
+- **[AI coding agent instructions](AGENTS.md)** — tiny entry point for code agents and new development sessions.
+
+**Public demo:** https://steveonw.github.io/Career-Library-/  
+**Last verified unpublish deployment:** https://github.com/steveonw/Career-Library-/actions/runs/40170996392
+
 ## What works
 
 - Mobile-friendly student directory with accessible cards.
 - Combined search, major, career field and experience filters.
 - URL-persisted filters and direct links to individual sample story pages.
 - Published-only catalog selection; drafts and invalid records excluded.
-- Server-side Notion data-source importer (optional) that writes the published snapshot to `data/profiles.json`.
+- Verified server-side Notion importer that writes the validated Published snapshot to `data/profiles.json`.
 - Zero runtime API tokens, no paid services and no front-end dependencies.
 - Node unit tests for filtering, publication controls, and slugs.
 
@@ -30,7 +41,7 @@ Double-click `START_DEMO.bat` in the cloned repository folder. It starts a local
 
 ## Notion publishing — preview first
 
-A **Notion-backed publishing demo** is now prepared. Connect it only to a **practice database containing fictional people**. The instructions are in **[docs/NOTION_SETUP.md](docs/NOTION_SETUP.md)**.
+A **Notion-backed publishing demo** has been connected, published, unpublished, and verified live. Connect it only to a **practice database containing fictional people**. The instructions are in **[docs/NOTION_SETUP.md](docs/NOTION_SETUP.md)**.
 
 The shortest path is:
 
@@ -60,11 +71,13 @@ The public site is accessible only after the GitHub Pages deployment succeeds. E
 
 Detailed setup and publication/unpublication testing: **[docs/NOTION_SETUP.md](docs/NOTION_SETUP.md)**.
 
-## Remaining P0 verification
+## P0 verification and next checks
 
-- Live Notion demo integration: create/edit a fictional record → preview → publish → student directory updates.
-- Change Published back to Draft → resync → student directory excludes it.
-- Confirm a mobile viewport and the public GitHub Pages deployment.
+- **Verified:** live Notion integration and safe Published-only import (preview + production sync).
+- **Verified:** change fictional Lena from Draft to Published, sync and show 3 public stories.
+- **Verified:** restore Lena to Draft, sync and show 2 stories on public GitHub Pages.
+- **Verified:** public Pages build/deploy and automated Node tests completed successfully.
+- **Still pending:** systematic mobile viewport/keyboard accessibility review, richer fictional test coverage, and presentation/application assets. These are P1 tasks, not claims of already-completed production work.
 
 ## Development decisions
 
