@@ -36,10 +36,17 @@ jobs:
         run: npx playwright install --with-deps chromium firefox
       - name: Validate snapshot and build static site
         run: npm run check
-      - name: Run real Chromium and Firefox Playwright tests
+      - name: Test built website in real Chromium and Firefox
         run: npm run test:e2e
         env:
           CI: 'true'
+          PLAYWRIGHT_REPORT_DIR: playwright-report/local
+      - name: Test live GitHub Pages website in real Chromium and Firefox
+        run: npm run test:e2e
+        env:
+          CI: 'true'
+          PLAYWRIGHT_TEST_BASE_URL: https://steveonw.github.io/Career-Library-/
+          PLAYWRIGHT_REPORT_DIR: playwright-report/live
       - name: Save Playwright HTML report, screenshots and failure traces
         if: ${{ !cancelled() }}
         uses: actions/upload-artifact@v4

@@ -111,7 +111,41 @@ test("keyboard skip navigation, card activation and back link", async ({ page })
   await expect(page.locator(".card")).toHaveCount(published.length);
 });
 
+test("every published career field has a working filter and a matching story card", async ({page}) => {
+  await page.goto("./");
+  const fields = [...new Set(published.map(p => p.field))].sort();
+  const select = page.locator("#field");
+  const options = await select.locator("option").allTextContents();
+  expect(options.slice(1)).toEqual(fields);
+  for (const field of fields) {
+    await select.selectOption({label:field});
+    const matches = published.filter(p => p.field === field);
+    await expect(page.locator(".card")).toHaveCount(matches.length);
+    await expect(page.locator("#count")).toHaveText(countText(matches.length));
+    for(const p of matches) await expect(page.locator(".card").filter({hasText:p.name})).toHaveCount(1);
+  }
+  await page.locator("#clear").click();
+  await expect(page.locator(".card")).toHaveCount(published.length);
+});
+
+test("all approved story URLs render the right role, advice and fiction notice", async ({page}) => {
+  for(const profile of published) {
+    await page.goto("./?story=" + encodeURIComponent(profile.slug));
+    await expect(page.locator("#profile h1")).toHaveText(profile.role);
+    await expect(page.locator("#profile .byline")).toContainText(profile.name);
+    await expect(page.locator("#profile")).toContainText(profile.summary);
+    await expect(page.locator("#profile")).toContainText(profile.advice);
+    await expect(page.locator("#profile .note")).toContainText("fictional");
+  }
+});
+
 test("missing / unpublished story URL cannot expose an interview", async ({ page }) => {
+  // Lena Park is a Draft in this demo; if she is later approved, do not hardcode perpetual Draft status.
+  if(!published.some(p => p.slug === "lena-park")) {
+    await page.goto("./?story=lena-park");
+    await expect(page.getByRole("heading",{name:"Story not found"})).toBeVisible();
+    await expect(page.locator("#profile")).not.toContainText("Birdwatching and biology courses");
+  }
   await page.goto("./?story=not-a-real-published-profile");
   await expect(page.getByRole("heading",{name:"Story not found"})).toBeVisible();
   await expect(page.locator("#profile")).toContainText("no longer published");
