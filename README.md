@@ -50,7 +50,7 @@ npm run sync            # writes only validated Published stories to data/profil
 npm run check           # syntax and unit tests
 ```
 
-**Limitations:** The real Notion integration has not been exercised with credentials yet; the code has mock-API unit tests. Sync is manually triggered, not instant. The output is public JSON, so use fictional text only. Uploaded media, nested Notion blocks and employer-owned profiles are intentionally out of scope for P0.
+**Verified end to end on October 25, 2026:** A private read-only Notion integration imported fictional records, published Lena Park (3 public stories), then changed her back to Draft and regenerated the public catalog (2 public stories). Both publishing and unpublishing deployments passed on GitHub Actions. **Limitations:** Sync occurs only after an explicit GitHub Actions run or a maintainer's request-marker commit, not instantly upon Notion edits. Output is public JSON, so use fictional text only. Uploaded media, nested Notion blocks and employer-owned profiles remain out of scope for P0.
 
 ## Public GitHub Pages demo
 

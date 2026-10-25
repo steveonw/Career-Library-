@@ -71,6 +71,8 @@ The preview does **not** update your repository's website. If the run fails, rea
 4. Once the `deploy` job is green, open **https://steveonw.github.io/Career-Library-/** and verify Maya and Jordan appear. This is a public Internet address; only invented records belong in the demo database.
 5. If working locally, click **Fetch origin → Pull origin** in GitHub Desktop and refresh http://localhost:8000/.
 
+**Maintainer-run alternative:** An authorized GitHub maintainer can also edit and commit `.github/notion-sync.request` on `main`. That single-purpose file triggers the same validated Notion **publish and Pages deploy** workflow without opening the Actions UI. No other file changes trigger this Notion import, and the workflow never publishes automatically just because a Notion record was edited. The browser-based `Run workflow` button remains the recommended option for nontechnical editors. Review the fictional content before any request; all published properties are public.
+
 **Test editorial publishing and unpublishing:**
 
 1. Change fictional Lena Park's status in Notion from **Draft** to **Published**.
