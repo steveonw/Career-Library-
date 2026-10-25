@@ -10,9 +10,9 @@ Career Library helps students discover majors and careers by learning from profe
 
 ## What I built and tested
 
-A lightweight, responsive student website connected to a **Notion-managed demo database** through a secure, read-only publishing pipeline. The public site supports keyword search and filters for major, career field, and experience, plus individual story views.
+A lightweight, responsive student website connected to a **Notion-managed demo database** through a secure, read-only publishing pipeline. The public site currently displays **eight fictional career stories across eight distinct career fields**, with keyword search and filters for major, career field and experience, plus individual story views.
 
-The key end-to-end test is complete: setting a fictional profile to **Published** in Notion and approving a GitHub Actions synchronization made it appear on the public website (**2 → 3** stories); changing it back to **Draft** and synchronizing again removed it (**3 → 2**). Both deployments succeeded. All demo professionals and journeys are invented. I have not used Career Library's actual interviews or internal content.
+The key end-to-end test is complete: setting a fictional profile to **Published** in Notion and approving a GitHub Actions synchronization made it appear on the public website (**2 → 3** stories); changing it back to **Draft** and synchronizing again removed it (**3 → 2**). Both deployments succeeded. I then reviewed six additional invented profiles, marked them Published in Notion, and deployed the expanded eight-story directory. **40/40 Playwright checks passed** across a local build and the deployed site in Chromium and Firefox. All demo professionals and journeys are invented. I have not used Career Library's actual interviews or internal content.
 
 ## Why this architecture?
 
@@ -38,6 +38,6 @@ I would choose the final CMS and hosting stack **with the founder after a requir
 2. What is the **source of truth for professional consent, video hosting, existing URLs, and redirects**?
 3. Who will **write, review, approve, and occasionally unpublish** stories after handoff?
 
-**Known limits:** Fictional stories only; client-side story views rather than production SEO URLs; no student accounts, production analytics, real data migration, or instantaneous Notion webhooks. Automated Chromium/Firefox mobile/tablet/desktop browser tests passed 16/16; real screen-reader and deeper accessibility review remain.
+**Known limits:** Fictional stories only; client-side story views rather than production SEO URLs; no student accounts, production analytics, real data migration, or instantaneous Notion webhooks. Automated Chromium/Firefox mobile/tablet/desktop and story-filter browser tests passed 40/40 against local and live sites; real screen-reader and deeper accessibility review remain.
 
 This demo emphasizes a functioning editorial workflow, prudent scope, transparent AI-assisted development, and iteration based on observable tests.

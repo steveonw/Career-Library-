@@ -1,7 +1,7 @@
 # AI Handoff Sheet — Career Library Demo
 
 **Checkpoint:** October 25, 2026 (America/New_York).  
-**Project state:** P0 completed; P1 application-readiness work is next.  
+**Project state:** P0 complete; P1 eight-story publication and 40/40 local/live browser QA complete; human accessibility review and application remain.  
 **Source of truth:** The **current GitHub `main` branch and latest Actions runs**; this document may become outdated as commits arrive.
 
 ## Copy this into a new AI chat / coding agent
@@ -25,15 +25,23 @@
 
 New frontend regression patch: `lib/catalog.js` now exports `matchReason`, prioritizes title matches, and labels result matches; `app.js` and `index.html` handle a more useful empty state and clearer unavailable stories; `styles.css` improves small-screen grids, 44px touch targets, focus outlines and reduced-motion support. `tests/catalog.test.mjs` adds ranking assertions. **GitHub Actions status must be checked from the latest run before declaring deployment successful.**
 
-Six more fictional Notion records were created **as Draft only**: Amina Okafor, Theo Bennett, Priya Shah, Elena Torres, Rowan Ellis, Cass Morgan. Existing Lena Park remains Draft. The public snapshot should still contain only Jordan and Maya. Expanded Notion select/multi-select options do not change the six required importer property names.
+Six more fictional Notion records were reviewed and **published**: Amina Okafor, Theo Bennett, Priya Shah, Elena Torres, Rowan Ellis and Cass Morgan. Existing Lena Park **remains Draft**. With Jordan and Maya, the public snapshot contains exactly eight published fictional stories across eight career fields. The mandatory Notion importer property names remain unchanged.
 
-Pending: human review of Draft stories before public publishing; actual mobile/keyboard/screen-reader interaction QA; one-page application brief and demo media.
+Completed: six fictional Draft stories reviewed and approved, eight-story public deployment, automated Chromium/Firefox keyboard and responsive tests. Pending: manual screen-reader/200%-zoom and real-device gesture review, application submission and optional demo media.
+
+## Latest P1 content expansion and live-browser verification — October 25, 2026
+
+Notion six-fictional-profile review and publication complete. **Eight published stories** now cover Technology, Science, Healthcare, Engineering, Design, Public Service, Finance and Communications. Lena Park remains Draft. [Successful sync + Pages deployment](https://github.com/steveonw/Career-Library-/actions/runs/40173656688); [content-review log](P1_CONTENT_REVIEW.md).
+
+A subsequent **40/40 passed Playwright run** verified the new catalog in both Chromium and Firefox, against a local Pages build **and the deployed public website**: https://github.com/steveonw/Career-Library-/actions/runs/40173739847. Ten scenarios cover every published field, every story URL, 375/768/1440 widths, URL filtering, empty state, keyboard access, browser errors and Draft protection. Reports from local and live passes are attached as `playwright-browser-report`.
+
+Remaining immediate task: submit the internship application with working demo/brief evidence; optionally capture a 60–90-second walkthrough. Do not add more fictional profiles unless needed for a specific test. Manual screen-reader/zoom verification still pending.
 
 ## New P1 Playwright browser automation — verified October 25, 2026
 
 A real GitHub Actions browser run passed **16/16 tests** in Chromium and Firefox: https://github.com/steveonw/Career-Library-/actions/runs/40173283873. Full screenshots for 375px, 768px, and 1440px are attached to the HTML report artifact `playwright-browser-report`. GitHub Pages deployment succeeded separately: https://github.com/steveonw/Career-Library-/actions/runs/40173283888.
 
-Source files: `e2e/catalog.spec.mjs` (8 scenarios), `playwright.config.mjs` (both browser engines; Python3 static server for local `dist/`), `.github/workflows/playwright.yml` (automated runner), `package.json` (`npm run test:e2e`), `docs/P1_QA_CHECKLIST.md` (evidence and limitations). Browser-testing dependency `@playwright/test@1.64.1` is **dev-only** and the public site remains vanilla JS.
+Source files: `e2e/catalog.spec.mjs` (10 scenarios; earlier baseline run had 8), `playwright.config.mjs` (both browser engines; Python3 static server for local `dist/`), `.github/workflows/playwright.yml` (automated runner), `package.json` (`npm run test:e2e`), `docs/P1_QA_CHECKLIST.md` (evidence and limitations). Browser-testing dependency `@playwright/test@1.64.1` is **dev-only** and the public site remains vanilla JS.
 
 To run on a compatible machine: `npm install`; `npx playwright install chromium firefox`; `npm run test:e2e`. This builds the site and tests it with real headless browsers. Python 3 executable `python3` is used by the local test server; if unavailable on Windows, use the GitHub Actions workflow. Optional `PLAYWRIGHT_TEST_BASE_URL` targets another URL, but the verified run tested locally served committed static assets, **not** live Pages.
 
@@ -43,7 +51,7 @@ To run on a compatible machine: `npm install`; `npx playwright install chromium 
 
 - Public static website with search, filters for **major**, **career field** and **experience level**, story cards, and per-story **`?story=slug`** views.
 - Real **read-only Notion API** integration. CI fetches database records and publishes only validated **Published** rows into committed `data/profiles.json`. Drafts are excluded from public output.
-- Live manual publish **2 → 3** demonstration, then unpublish **3 → 2**, both confirmed on GitHub Pages. Notion currently retains fictional **Lena Park as Draft**; public catalog has fictional **Jordan Rivera and Maya Chen**.
+- Live manual publish **2 → 3** demonstration, then unpublish **3 → 2**, both confirmed on GitHub Pages. Further P1 publication **2 → 8** also passed: six reviewed profiles added, with **Lena Park still Draft**. Public catalog now contains eight fictional profiles.
 - Github Pages hosted publicly, no Notion API key in the frontend; current site is intentionally **`noindex, nofollow`** because it is a fictional, unaffiliated demonstration.
 - GitHub CI uses Node 22; `npm run check` runs syntax validation, Node tests, and allowlisted Pages build.
 - **Not done:** Real Career Library migration, real users, permissions for professional interviews, Notion webhooks/scheduled push, production SEO/analytics, exhaustive mobile/accessibility testing, full backend, or a production CMS.
@@ -105,7 +113,7 @@ npm run sync             # Only with private env vars; REPLACES public JSON snap
 ## What to do next (P1, not more P0 rebuilding)
 
 1. **Check mobile/keyboard usability** on real browser sizes. Document actual findings and fix visible defects; keep simple code.
-2. Add **4–6 more fictional Notion profiles** for meaningful diversity, but review before importing and publishing. Check combined filters and an empty result.
+2. **Completed:** Six fictional Notion careers have been reviewed and published (eight total). Do not add more without a specific reason; all eight fields and story pages passed live-browser checks.
 3. Assemble application assets: **one-page founder brief**, short AI-native workflow explanation, 60–90-second optional demo video, README screenshot and working links.
 4. Optional UX: explain match reasons / favor job-title matches, strengthen empty state, add regression checks.
 5. **Aim to submit by October 28** before the stated October 29 deadline; verify closing time.

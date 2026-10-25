@@ -1,7 +1,7 @@
 # Career Library — Updated Project Plan
 
 **Last verified:** October 25, 2026 (EDT)  
-**Status:** P0 working and public; P1 browser automation (16/16 Playwright) and mobile evidence recorded, six Draft stories prepared, manual accessibility review and application submission pending  
+**Status:** P0 completed; P1 expanded to 8 fictional published stories across 8 career fields, 40/40 Playwright checks passing on local and live sites; manual screen-reader/zoom checks and application submission remain  
 **Application target:** Submit by October 28, before the October 29 deadline (confirm the exact time zone on the listing).
 
 > **Independent proof of concept.** This is an unsolicited student internship prototype, **not** the official Career Library website. All professionals and stories in the demo are fictional. Never use a real interview or someone's personal information without permission.
@@ -30,7 +30,15 @@ Prove the essential Career Library workflow: a nontechnical editor writes a Care
 | Browser/device accessibility QA | **Pending deeper review** | CSS has responsive rules; real mobile and keyboard/screen-reader checks remain |
 | Real Career Library content / permissions / migration | **Not in P0** | No access or approval to republish real professional stories |
 
-**Current published fictional data (verified):** Maya Chen — Software Engineer; Jordan Rivera — Environmental Scientist. Lena Park — Wildlife Researcher is still in Notion as **Draft** and excluded from `data/profiles.json`.
+**Current published fictional data (verified):** Amina Okafor (Occupational Therapist), Cass Morgan (Science Communicator), Elena Torres (Urban Planner), Jordan Rivera (Environmental Scientist), Maya Chen (Software Engineer), Priya Shah (Product Designer), Rowan Ellis (Financial Analyst), Theo Bennett (Civil Engineer). Lena Park remains **Draft** and is excluded from `data/profiles.json`. All content is invented.
+
+## P1 expansion completed — verified October 25, 2026
+
+- Reviewed six fictional Draft profiles for name/slug uniqueness, complete Name/Role/Major/Career Field/Summary/Status properties, plausible journeys, student advice, skills, interests and experience labels.
+- Marked exactly those six profiles Published; left Lena Park as Draft. Notion → GitHub → Pages deployment passed with eight unique public stories and no Draft stories: https://github.com/steveonw/Career-Library-/actions/runs/40173656688
+- Improved browser tests now check each of eight published career fields, every story page, search, combined filters, keyboard navigation, responsive layouts and Draft exclusions.
+- **40/40 Playwright checks passed** (10 scenarios × Chromium/Firefox × local built site/live GitHub Pages): https://github.com/steveonw/Career-Library-/actions/runs/40173739847
+- [Content-review evidence](P1_CONTENT_REVIEW.md). Remaining P1 priorities are screen-reader/200%-zoom human QA, the application and optional walkthrough.
 
 ## P1 browser QA — verified October 25, 2026
 
@@ -46,9 +54,9 @@ See [P1_QA_CHECKLIST.md](P1_QA_CHECKLIST.md) for full evidence and remaining che
 ## P1 progress — October 25, 2026
 
 - **P1 frontend patch committed:** Search now ranks career-title matches ahead of major-only matches and shows a match-reason label; clearer empty results and missing/unpublished story feedback; 44px minimum filter controls, smaller-screen grid safeguards, keyboard focus styling and reduced-motion support. New Node regression cases cover ranking.
-- **P1 sample preparation:** Six new *fictional* Notion records created as **Draft**, not public: Amina Okafor (Occupational Therapist), Theo Bennett (Civil Engineer), Priya Shah (Product Designer), Elena Torres (Urban Planner), Rowan Ellis (Financial Analyst), Cass Morgan (Science Communicator). Schema options expanded without changing required importer properties.
-- **Content approval remains pending.** The public site still contains only Jordan Rivera and Maya Chen until those Draft records are reviewed, changed to Published and synchronized with explicit approval.
-- **Further manual QA pending:** Real-browser screenshots/interaction checks at 375px, 768px and desktop; keyboard-only walkthrough, browser console, zoom behavior, and a screen-reader spot-check. Passing code tests is not proof these checks were performed.
+- **P1 sample expansion complete:** Six fictional records reviewed and published directly from Notion: Amina Okafor, Theo Bennett, Priya Shah, Elena Torres, Rowan Ellis and Cass Morgan. Combined with existing Jordan and Maya, the public demo contains eight stories; the required importer schema did not change.
+- **Content review and publication complete.** GitHub's approved sync and Pages deployment succeeded (eight stories). Lena Park remains Draft and excluded.
+- **Further human QA pending:** Automated Chromium/Firefox tests passed locally and against live Pages at 375px, 768px and desktop, including keyboard actions and errors; actual screen-reader output, color contrast, 200% zoom and native-device gestures are not yet certified.
 - **P1 application packet pending:** One-page founder brief, polished walkthrough/evidence, and submission. Deadline October 29; aim before October 28.
 
 ## 3. P1 — Application-ready demo, timeboxed through October 28
@@ -58,17 +66,17 @@ Work in the following order. Protect the existing public publishing/unpublishing
 | Priority | Work | Concrete definition of done |
 | --- | --- | --- |
 | **P1.1 — Essential** | Mobile and accessibility smoke test | Verify 375px, 768px, desktop; use keyboard to open cards and use filters; no clipped controls, blank catalog, or console errors; note limitations |
-| **P1.2 — Essential** | Richer fictional sample distribution | Add ~4–6 more explicitly fictional profiles in **Notion**, covering different majors, fields, and experience levels. Preview content before public sync; no real names/interviews |
+| **P1.2 — Done** | Richer fictional sample distribution | Add ~4–6 more explicitly fictional profiles in **Notion**, covering different majors, fields, and experience levels. Preview content before public sync; no real names/interviews |
 | **P1.3 — Essential** | Evidence and handover | Update README/demo instructions; collect screenshots of Notion statuses, Actions logs, 2→3→2 transition, mobile page; document AI-assisted development and verified tests |
 | **P1.4 — Essential** | Application packet | One-page founder-facing brief, concise stack rationale, short answer to employer's CMS-migration question, repo and public-demo links, optional 60–90 sec walkthrough |
-| **P1.5 — If time** | Student search clarity | Prioritize career-title matches and clarify matches on majors/skills (e.g., `eng` can match the major English). Add tests for ranking/labels |
+| **P1.5 — Done** | Student search clarity | Prioritize career-title matches and clarify matches on majors/skills (e.g., `eng` can match the major English). Add tests for ranking/labels |
 | **P1.6 — If time** | Visual polish | Improve typography, spacing, story hierarchy, and a more distinct search empty state, without adding a new framework |
 | **Not for this application** | AI chatbot, student accounts, paid services, full migration, real interviews, analytics integration, automatic editing or live webhooks | Revisit after founder discovery |
 
 ### Proposed short schedule
 
 - **Oct 25:** Freeze and document verified P0; start P1 mobile/keyboard check.
-- **Oct 26:** Add and review a small range of fictional Notion stories; verify filters and redeploy.
+- **Oct 25 (completed early):** Reviewed and published six fictional Notion stories; verified eight fields, redeployed, and ran 40 browser checks.
 - **Oct 27:** Fix any genuine usability defects; prepare a short screen recording and one-page founder brief.
 - **Oct 28:** Final smoke test, ensure GitHub Pages is live, submit application; keep full specification for an interview.
 

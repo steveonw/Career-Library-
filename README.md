@@ -1,30 +1,31 @@
-# Career Library — P0 concept demo
+# Career Library — Independent P1 working prototype
 
 An **independent, not affiliated** concept prototype for the AI-Native Web Intern opportunity. Every bundled professional story is **fictional**, and the example content is explicitly labeled as such. Do not represent this as a Career Library production site.
 
 ## Current checkpoint and continuation
 
-**As of October 25, 2026, P0 is complete as a working, fictional, independent proof of concept.** The live Notion-backed publish/unpublish test passed and the public catalog contains **Maya Chen** and **Jordan Rivera** (both fictional). Lena Park has been returned to **Draft**.
+**As of October 25, 2026, P0 is verified and P1's content expansion is deployed.** Eight fictional career stories span eight career fields and eight majors. Notion is the editor, GitHub Actions validates and deploys, and the public website allows students to explore the stories. **Lena Park remains Draft and is not public.**
 
 - **[Updated project plan](docs/PROJECT_PLAN.md)** — P0 evidence, P1 steps for the October 29 application, definitions of done, and P2 production ideas.
 - **[AI handoff sheet](docs/AI_HANDOFF.md)** — ready-to-paste next-agent prompt, exact files/commands, safe publishing, workflows, risks and debugging lessons.
+- **[P1 content-review log](docs/P1_CONTENT_REVIEW.md)** — eight fictional profiles, review criteria, publishing evidence, remaining caveats.
 - **[AI coding agent instructions](AGENTS.md)** — tiny entry point for code agents and new development sessions.
 
 **Public demo:** https://steveonw.github.io/Career-Library-/  
-**Last verified unpublish deployment:** https://github.com/steveonw/Career-Library-/actions/runs/40170996392
+**Verified content expansion and deployment:** https://github.com/steveonw/Career-Library-/actions/runs/40173656688
 
 ## P1 enhancements underway
 
 - Search ranks career-title matches first and explains whether a result matched a title, major, skill, or other field.
 - Small-screen layout, keyboard focus outlines, touch target sizes, and empty-state help improved.
-- Six additional fictional profiles have been prepared in **Notion as Draft**. They are **not public** and won't appear until an approved publishing sync.
+- Six additional fictional profiles were reviewed, approved and **published from Notion**, expanding the site from 2 to **8 career stories** without editing the website code. [Approved sync and deployment](https://github.com/steveonw/Career-Library-/actions/runs/40173656688).
 - Further mobile/keyboard screen testing and the applicant presentation packet are still pending; see [the current plan](docs/PROJECT_PLAN.md).
 
 ### Verified Playwright browser QA
 
-Playwright now tests the built website in **Chromium and Firefox**. The first CI run passed **16/16 browser tests** covering mobile/tablet/desktop widths, no horizontal overflow, filtering and URL persistence, keyboard navigation, draft-safe links, and frontend load errors.
+Playwright now tests **both the local build and the deployed public site in Chromium and Firefox**. The expanded eight-story run passed **40/40 browser tests**, including all eight career-field filters, every story page, mobile/tablet/desktop widths, filtering, URL persistence, keyboard navigation, Draft protection, and missing-asset detection.
 
-- **[Successful browser-test run](https://github.com/steveonw/Career-Library-/actions/runs/40173283873)** — download `playwright-browser-report` for HTML results and full-page screenshots.
+- **[Successful 40/40 browser-test run](https://github.com/steveonw/Career-Library-/actions/runs/40173739847)** — download `playwright-browser-report` for HTML results and full-page screenshots.
 - **[P1 QA checklist and limitations](docs/P1_QA_CHECKLIST.md)** — automatic checks passed; real screen-reader and 200% zoom QA remain.
 - **Run optional Playwright locally:** `npm install`, `npx playwright install chromium firefox`, then `npm run test:e2e` (Python 3 required for the local static test server). CI runs these automatically on GitHub.
 
@@ -92,7 +93,7 @@ Detailed setup and publication/unpublication testing: **[docs/NOTION_SETUP.md](d
 - **Verified:** change fictional Lena from Draft to Published, sync and show 3 public stories.
 - **Verified:** restore Lena to Draft, sync and show 2 stories on public GitHub Pages.
 - **Verified:** public Pages build/deploy and automated Node tests completed successfully.
-- **Still pending:** systematic mobile viewport/keyboard accessibility review, richer fictional test coverage, and presentation/application assets. These are P1 tasks, not claims of already-completed production work.
+- **Still pending:** human screen-reader/200%-zoom/contrast review, application submission and optional walkthrough recording. Automated browser QA and the eight-story content expansion are done; the demo is not production-ready.
 
 ## Development decisions
 

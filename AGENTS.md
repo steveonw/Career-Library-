@@ -10,4 +10,4 @@ Before delivering a change:
 3. Write small reviewable commits, avoid public content changes unless explicitly authorized, and never reveal `NOTION_TOKEN` or other secrets.
 4. Record updated milestones and caveats in the plan/handoff. Do not claim browser tests or production readiness without proof.
 
-**Next priorities:** Responsive/keyboard QA, sample data diversity (fictional only), application brief/demo evidence. See the plan for scope and deadline.
+**Latest verified P1:** Eight fictional stories have been published; live and local Playwright runs passed 40/40 checks. **Next priorities:** Application submission and evidence/demo recording, with manual screen-reader and zoom QA still pending. See the plan for status and deadline.

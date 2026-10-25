@@ -1,11 +1,20 @@
 # P1 Browser QA Checklist — Career Library
 
-**Status:** Automated Chromium/Firefox browser tests passed October 25, 2026. The manual-only checks below are still pending unless explicitly supported by supplied screenshots. See [AI_HANDOFF.md](AI_HANDOFF.md).
+**Status:** Automated Chromium/Firefox tests passed in local and live GitHub Pages builds on October 25, 2026 (40/40 checks). The manual-only checks below are still pending unless supported by supplied screenshots. See [AI_HANDOFF.md](AI_HANDOFF.md).
 
 **Website:** https://steveonw.github.io/Career-Library-/  
 **Test only the fictional demo.** Keep Notion Draft content excluded.
 
-## Automated Playwright browser results — PASSED, October 25, 2026
+## Expanded eight-story test results — 40/40 PASSED, October 25, 2026
+
+**[Live and local browser run](https://github.com/steveonw/Career-Library-/actions/runs/40173739847)** | **[Eight-story Notion publishing run](https://github.com/steveonw/Career-Library-/actions/runs/40173656688)**
+
+- **40/40 passed:** 10 real-browser scenarios × Chromium and Firefox × local static build and live GitHub Pages URL. GitHub CI reported 20/20 successful checks for each site, 0 failures.
+- Confirmed **eight live fictional careers in eight different fields**, every published story route, each field-filter option, combined filters and URL persistence, full-page viewport screenshots at 375, 768 and 1440px, keyboard entry and back navigation, search and empty results, Draft exclusion and no fatal frontend asset errors.
+- HTML reports and screenshots are downloadable from the run's **playwright-browser-report** artifact (seven-day GitHub retention). Reports were generated separately for local and live site.
+- **Still not a substitute** for human TalkBack/Narrator checks, 200% text zoom, iOS Safari, contrast audit or user testing. Results are specific to these versions of the fictional prototype.
+
+## Initial Playwright baseline — PASSED, October 25, 2026
 
 **[Successful GitHub Actions run](https://github.com/steveonw/Career-Library-/actions/runs/40173283873)** · **[HTML report and screenshots](https://github.com/steveonw/Career-Library-/actions/runs/40173283873)** (download artifact `playwright-browser-report`, retained for 7 days)
 
