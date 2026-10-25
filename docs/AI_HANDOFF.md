@@ -29,6 +29,16 @@ Six more fictional Notion records were created **as Draft only**: Amina Okafor, 
 
 Pending: human review of Draft stories before public publishing; actual mobile/keyboard/screen-reader interaction QA; one-page application brief and demo media.
 
+## New P1 Playwright browser automation — verified October 25, 2026
+
+A real GitHub Actions browser run passed **16/16 tests** in Chromium and Firefox: https://github.com/steveonw/Career-Library-/actions/runs/40173283873. Full screenshots for 375px, 768px, and 1440px are attached to the HTML report artifact `playwright-browser-report`. GitHub Pages deployment succeeded separately: https://github.com/steveonw/Career-Library-/actions/runs/40173283888.
+
+Source files: `e2e/catalog.spec.mjs` (8 scenarios), `playwright.config.mjs` (both browser engines; Python3 static server for local `dist/`), `.github/workflows/playwright.yml` (automated runner), `package.json` (`npm run test:e2e`), `docs/P1_QA_CHECKLIST.md` (evidence and limitations). Browser-testing dependency `@playwright/test@1.64.1` is **dev-only** and the public site remains vanilla JS.
+
+To run on a compatible machine: `npm install`; `npx playwright install chromium firefox`; `npm run test:e2e`. This builds the site and tests it with real headless browsers. Python 3 executable `python3` is used by the local test server; if unavailable on Windows, use the GitHub Actions workflow. Optional `PLAYWRIGHT_TEST_BASE_URL` targets another URL, but the verified run tested locally served committed static assets, **not** live Pages.
+
+**What passed:** mobile/tablet/desktop overflow and control geometry; Approved-only catalog; search relevance and query persistence; combined filters; empty/reset state; keyboard Skip link and story navigation; unpublished/missing page; public JSON status; no browser page errors. **What did not:** native Android Firefox, real TalkBack/Narrator, 200% zoom, iOS Safari and contrast audit. Supplied phone/desktop screenshots cover only visible portions.
+
 ## What is **actually working**
 
 - Public static website with search, filters for **major**, **career field** and **experience level**, story cards, and per-story **`?story=slug`** views.

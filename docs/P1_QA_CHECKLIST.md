@@ -1,9 +1,23 @@
 # P1 Browser QA Checklist — Career Library
 
-**Status:** Checklist prepared October 25, 2026. **Items below are not yet evidence of completed hands-on browser testing.** See [AI_HANDOFF.md](AI_HANDOFF.md).
+**Status:** Automated Chromium/Firefox browser tests passed October 25, 2026. The manual-only checks below are still pending unless explicitly supported by supplied screenshots. See [AI_HANDOFF.md](AI_HANDOFF.md).
 
 **Website:** https://steveonw.github.io/Career-Library-/  
 **Test only the fictional demo.** Keep Notion Draft content excluded.
+
+## Automated Playwright browser results — PASSED, October 25, 2026
+
+**[Successful GitHub Actions run](https://github.com/steveonw/Career-Library-/actions/runs/40173283873)** · **[HTML report and screenshots](https://github.com/steveonw/Career-Library-/actions/runs/40173283873)** (download artifact `playwright-browser-report`, retained for 7 days)
+
+- **16/16 browser tests passed, 0 failures**: 8 scenarios in headless Chromium (Chrome for Testing 156) and 8 in headless Firefox (157) on GitHub's Linux runner.
+- At **375px / 768px / 1440px** in both engines, no horizontal document overflow was measured; search/select/reset controls stayed inside the viewport with at least 43px measured height; card columns followed responsive breakpoints.
+- Browser interactions passed for Approved-only catalog count, search/match reasons, persisted URL filters, combined major/field/experience filters, reset empty-state, keyboard Skip-to-content and Enter-to-open-story, unavailable story URLs, fictional disclosure, Published-only JSON, and no JavaScript page errors or missing frontend assets.
+- The runner served a **freshly built local `dist/` bundle**, so these checks validate actual browser behavior against committed static files. The separate [GitHub Pages deployment](https://github.com/steveonw/Career-Library-/actions/runs/40173283888) also passed. The tests did **not** directly browse the live Pages URL, nor emulate native Android Firefox or iOS Safari.
+- Playwright attached **six full-page screenshots** (three widths per browser) to the HTML report. Test configuration is [playwright.config.mjs](../playwright.config.mjs) and scenarios are [e2e/catalog.spec.mjs](../e2e/catalog.spec.mjs). No Notion tokens or real professional stories were used.
+
+**User-supplied visual evidence:** Firefox-on-Android phone screenshots show readable hero, filter labels and single-column cards; an Opera desktop screenshot shows the multi-column directory. These do not replace testing the entire page on device.
+
+**Still pending human QA:** 200% zoom, actual screen-reader announcements (Narrator/TalkBack), gesture/touch behavior on real device, color contrast audit, and iOS Safari testing.
 
 ## Manual smoke test — desktop, tablet, mobile
 

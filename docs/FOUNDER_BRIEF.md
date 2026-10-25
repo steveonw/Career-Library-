@@ -38,6 +38,6 @@ I would choose the final CMS and hosting stack **with the founder after a requir
 2. What is the **source of truth for professional consent, video hosting, existing URLs, and redirects**?
 3. Who will **write, review, approve, and occasionally unpublish** stories after handoff?
 
-**Known limits:** Fictional stories only; client-side story views rather than production SEO URLs; no student accounts, production analytics, real data migration, or instantaneous Notion webhooks. Mobile and accessibility smoke testing is in progress.
+**Known limits:** Fictional stories only; client-side story views rather than production SEO URLs; no student accounts, production analytics, real data migration, or instantaneous Notion webhooks. Automated Chromium/Firefox mobile/tablet/desktop browser tests passed 16/16; real screen-reader and deeper accessibility review remain.
 
 This demo emphasizes a functioning editorial workflow, prudent scope, transparent AI-assisted development, and iteration based on observable tests.

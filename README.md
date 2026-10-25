@@ -20,6 +20,14 @@ An **independent, not affiliated** concept prototype for the AI-Native Web Inter
 - Six additional fictional profiles have been prepared in **Notion as Draft**. They are **not public** and won't appear until an approved publishing sync.
 - Further mobile/keyboard screen testing and the applicant presentation packet are still pending; see [the current plan](docs/PROJECT_PLAN.md).
 
+### Verified Playwright browser QA
+
+Playwright now tests the built website in **Chromium and Firefox**. The first CI run passed **16/16 browser tests** covering mobile/tablet/desktop widths, no horizontal overflow, filtering and URL persistence, keyboard navigation, draft-safe links, and frontend load errors.
+
+- **[Successful browser-test run](https://github.com/steveonw/Career-Library-/actions/runs/40173283873)** — download `playwright-browser-report` for HTML results and full-page screenshots.
+- **[P1 QA checklist and limitations](docs/P1_QA_CHECKLIST.md)** — automatic checks passed; real screen-reader and 200% zoom QA remain.
+- **Run optional Playwright locally:** `npm install`, `npx playwright install chromium firefox`, then `npm run test:e2e` (Python 3 required for the local static test server). CI runs these automatically on GitHub.
+
 ## What works
 
 - Mobile-friendly student directory with accessible cards.

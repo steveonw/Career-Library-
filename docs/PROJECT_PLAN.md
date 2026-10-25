@@ -1,7 +1,7 @@
 # Career Library — Updated Project Plan
 
 **Last verified:** October 25, 2026 (EDT)  
-**Status:** P0 functional and publicly deployed; P1 frontend improvements implemented, fictional Draft content prepared, manual QA and application packet pending  
+**Status:** P0 working and public; P1 browser automation (16/16 Playwright) and mobile evidence recorded, six Draft stories prepared, manual accessibility review and application submission pending  
 **Application target:** Submit by October 28, before the October 29 deadline (confirm the exact time zone on the listing).
 
 > **Independent proof of concept.** This is an unsolicited student internship prototype, **not** the official Career Library website. All professionals and stories in the demo are fictional. Never use a real interview or someone's personal information without permission.
@@ -31,6 +31,17 @@ Prove the essential Career Library workflow: a nontechnical editor writes a Care
 | Real Career Library content / permissions / migration | **Not in P0** | No access or approval to republish real professional stories |
 
 **Current published fictional data (verified):** Maya Chen — Software Engineer; Jordan Rivera — Environmental Scientist. Lena Park — Wildlife Researcher is still in Notion as **Draft** and excluded from `data/profiles.json`.
+
+## P1 browser QA — verified October 25, 2026
+
+- **Playwright Chromium + Firefox passed 16/16 tests**. GitHub run: https://github.com/steveonw/Career-Library-/actions/runs/40173283873
+- Browser widths **375, 768, and 1440px** all passed no horizontal overflow, visible filter controls with minimum 43px height, and responsive card geometry. Captured six full-page screenshots in the `playwright-browser-report` artifact.
+- Browser-driven search, URL persistence, combined filters, empty/reset flow, keyboard skip/story navigation, missing story protection, JSON Published-only assertions, and load error monitoring all passed.
+- **Real-device screenshots provided:** Firefox Android phone and Opera desktop; they show no obvious clipping in the depicted portions of the page.
+- **Not yet done:** native screen reader assessment, zoom/reflow at 200%, contrast audit, mobile gestures, iOS Safari. Automated Chromium/Firefox headless testing does not prove production-wide accessibility.
+- Standalone GitHub Pages deploy also passed: https://github.com/steveonw/Career-Library-/actions/runs/40173283888
+
+See [P1_QA_CHECKLIST.md](P1_QA_CHECKLIST.md) for full evidence and remaining checklist.
 
 ## P1 progress — October 25, 2026
 
