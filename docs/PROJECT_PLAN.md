@@ -32,6 +32,13 @@ Prove the essential Career Library workflow: a nontechnical editor writes a Care
 
 **Current published fictional data (verified):** Amina Okafor (Occupational Therapist), Cass Morgan (Science Communicator), Elena Torres (Urban Planner), Jordan Rivera (Environmental Scientist), Maya Chen (Software Engineer), Priya Shah (Product Designer), Rowan Ellis (Financial Analyst), Theo Bennett (Civil Engineer). Lena Park remains **Draft** and is excluded from `data/profiles.json`. All content is invented.
 
+## Application packet prepared — October 25, 2026
+
+- **[Editable application packet](APPLICATION_PACKET.md)** covers the employer's required Notion-to-scalable-website answer, AI-assisted development description, prototype portfolio evidence, and 60–90-second video outline.
+- Confirmed the job listing expires **October 29, 2026**: https://scecareer.nau.edu/jobs/career-library-ai-native-web-intern/
+- **Not submitted.** User must provide their own resume or LinkedIn, check the application's actual submission method, review and personalize the wording, and submit. Aim October 26–27 rather than risk a deadline-time interpretation.
+- Freeze nonessential site features; manual screen-reader/zoom review remains useful but is not a reason to delay the application.
+
 ## P1 expansion completed — verified October 25, 2026
 
 - Reviewed six fictional Draft profiles for name/slug uniqueness, complete Name/Role/Major/Career Field/Summary/Status properties, plausible journeys, student advice, skills, interests and experience labels.

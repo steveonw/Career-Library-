@@ -29,6 +29,10 @@ Six more fictional Notion records were reviewed and **published**: Amina Okafor,
 
 Completed: six fictional Draft stories reviewed and approved, eight-story public deployment, automated Chromium/Firefox keyboard and responsive tests. Pending: manual screen-reader/200%-zoom and real-device gesture review, application submission and optional demo media.
 
+## Application packet (prepared, not submitted)
+
+See [APPLICATION_PACKET.md](APPLICATION_PACKET.md) for copy-ready founder note, required architecture answer (Next.js/TypeScript/Sanity **proposed**, Notion/static **verified**), AI-assisted development description, portfolio summary, video storyboard, and checklist. Career Library's public internship listing expires **October 29, 2026**. Application submission requires the user's resume/LinkedIn and direct action; no external application has been submitted. **Prioritize submitting October 26–27 over new features.**
+
 ## Latest P1 content expansion and live-browser verification — October 25, 2026
 
 Notion six-fictional-profile review and publication complete. **Eight published stories** now cover Technology, Science, Healthcare, Engineering, Design, Public Service, Finance and Communications. Lena Park remains Draft. [Successful sync + Pages deployment](https://github.com/steveonw/Career-Library-/actions/runs/40173656688); [content-review log](P1_CONTENT_REVIEW.md).
