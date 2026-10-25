@@ -1,5 +1,29 @@
 [
   {
+    "slug": "theo-bennett",
+    "name": "Theo Bennett",
+    "role": "Civil Engineer",
+    "major": [
+      "Civil Engineering"
+    ],
+    "field": "Engineering",
+    "level": "Early career",
+    "interests": [
+      "Cities",
+      "Making",
+      "Nature"
+    ],
+    "summary": "Theo helps design bridges and public infrastructure that communities rely on.",
+    "journey": "A high school design challenge turned into a civil engineering degree, site visits, and work on transportation projects.",
+    "advice": "Take your designs outside the classroom and learn how field constraints change a good idea.",
+    "skills": [
+      "CAD",
+      "Project Planning",
+      "Teamwork"
+    ],
+    "status": "Published"
+  },
+  {
     "slug": "jordan-rivera",
     "name": "Jordan Rivera",
     "role": "Environmental Scientist",
@@ -18,6 +42,101 @@
     "skills": [
       "Field research",
       "Data analysis"
+    ],
+    "status": "Published"
+  },
+  {
+    "slug": "rowan-ellis",
+    "name": "Rowan Ellis",
+    "role": "Financial Analyst",
+    "major": [
+      "Economics"
+    ],
+    "field": "Finance",
+    "level": "Early career",
+    "interests": [
+      "Data",
+      "Research"
+    ],
+    "summary": "Rowan turns financial data into clear recommendations for a small organization's decisions.",
+    "journey": "A statistics class and a campus budgeting project gave Rowan practical experience with forecasting and explaining uncertainty.",
+    "advice": "Learn to explain a spreadsheet's assumptions as clearly as its results.",
+    "skills": [
+      "Statistics",
+      "Financial Modeling",
+      "Data analysis"
+    ],
+    "status": "Published"
+  },
+  {
+    "slug": "amina-okafor",
+    "name": "Amina Okafor",
+    "role": "Occupational Therapist",
+    "major": [
+      "Kinesiology"
+    ],
+    "field": "Healthcare",
+    "level": "Mid career",
+    "interests": [
+      "Health",
+      "Community",
+      "Education"
+    ],
+    "summary": "Amina helps people regain confidence in everyday activities after illness or injury.",
+    "journey": "A volunteer role at a community rehabilitation center sparked Amina's interest in occupational therapy. She pursued health sciences coursework and practical clinical training.",
+    "advice": "Observe professionals in different care settings and practice listening closely to the people you hope to help.",
+    "skills": [
+      "Listening",
+      "Research",
+      "Teamwork"
+    ],
+    "status": "Published"
+  },
+  {
+    "slug": "priya-shah",
+    "name": "Priya Shah",
+    "role": "Product Designer",
+    "major": [
+      "Graphic Design"
+    ],
+    "field": "Design",
+    "level": "Early career",
+    "interests": [
+      "Creativity",
+      "Technology",
+      "Education"
+    ],
+    "summary": "Priya designs digital tools by listening to users, testing prototypes, and refining details.",
+    "journey": "Illustration projects led Priya toward interaction design, where she discovered that research was as important as visuals.",
+    "advice": "Keep sketches, failed prototypes, and user feedback in your portfolio—not only final screens.",
+    "skills": [
+      "UX Research",
+      "Accessibility",
+      "Teamwork"
+    ],
+    "status": "Published"
+  },
+  {
+    "slug": "cass-morgan",
+    "name": "Cass Morgan",
+    "role": "Science Communicator",
+    "major": [
+      "Communications"
+    ],
+    "field": "Communications",
+    "level": "Mid career",
+    "interests": [
+      "Writing",
+      "Education",
+      "Research"
+    ],
+    "summary": "Cass translates scientific findings into accessible stories for everyday audiences.",
+    "journey": "Student journalism and a science museum internship helped Cass combine research, writing, and public engagement.",
+    "advice": "Interview researchers, verify claims, and write for an audience that is new to the subject.",
+    "skills": [
+      "Writing",
+      "Public Speaking",
+      "Research"
     ],
     "status": "Published"
   },
@@ -41,6 +160,30 @@
       "JavaScript",
       "Accessibility",
       "Teamwork"
+    ],
+    "status": "Published"
+  },
+  {
+    "slug": "elena-torres",
+    "name": "Elena Torres",
+    "role": "Urban Planner",
+    "major": [
+      "Geography"
+    ],
+    "field": "Public Service",
+    "level": "Mid career",
+    "interests": [
+      "Cities",
+      "Community",
+      "Nature"
+    ],
+    "summary": "Elena works with residents to shape safer, greener, and more walkable neighborhoods.",
+    "journey": "Researching public transit access during college drew Elena toward community planning and public meetings.",
+    "advice": "Attend a local planning meeting to see how maps, budgets, and community voices shape decisions.",
+    "skills": [
+      "Research",
+      "Writing",
+      "Project Planning"
     ],
     "status": "Published"
   }
