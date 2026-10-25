@@ -20,8 +20,9 @@
       <label>Experience <select id="level"><option value="">All levels</option></select></label>
       <button id="clear" type="button">Clear filters</button>
     </section>
-    <div class="results-head"><h2>Discover stories</h2><p id="count" aria-live="polite"></p></div>
-    <div id="cards" class="cards"></div><p id="empty" class="empty" hidden>No stories match those filters. Try broadening your search.</p>
+    <div class="results-head"><h2>Discover stories</h2><p id="count" role="status" aria-live="polite" aria-atomic="true"></p></div>
+    <div id="cards" class="cards"></div>
+    <div id="empty" class="empty" hidden><h3>No matching stories yet</h3><p>Try a broader career field, a different major, or clear your search.</p><button type="button" id="reset-empty">Show all stories</button></div>
   </section><section id="detail" hidden><a href="./" class="back" id="back">← All stories</a><div id="profile"></div></section></main>
   <footer><p>Portfolio prototype only — fictional people and journeys. Not affiliated with Career Library.</p><p>Made for a student internship proposal • No tracking or accounts</p></footer>
 </body></html>
