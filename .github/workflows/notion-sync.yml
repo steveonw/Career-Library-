@@ -1,6 +1,12 @@
 name: Sync fictional stories from Notion
 
 on:
+  # Editing this marker is a deliberate sync request. Ordinary website commits
+  # do not import from Notion, and workflow_dispatch preview still stays safe.
+  push:
+    branches: [main]
+    paths:
+      - '.github/notion-sync.request'
   workflow_dispatch:
     inputs:
       publish:
@@ -57,14 +63,14 @@ jobs:
           git diff --stat -- data/profiles.json
           git status --short
       - name: Downloadable preview (fictional data only)
-        if: ${{ !inputs.publish }}
+        if: ${{ github.event_name == 'workflow_dispatch' && !inputs.publish }}
         uses: actions/upload-artifact@v4
         with:
           name: notion-preview-catalog
           path: data/profiles.json
           retention-days: 2
       - name: Commit fictional public catalog to main
-        if: ${{ inputs.publish }}
+        if: ${{ github.event_name == 'push' || inputs.publish }}
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
@@ -82,14 +88,14 @@ jobs:
             git push origin HEAD:main
           fi
       - name: Package the static website for Pages
-        if: ${{ inputs.publish }}
+        if: ${{ github.event_name == 'push' || inputs.publish }}
         uses: actions/upload-pages-artifact@v4
         with:
           path: dist/
           include-hidden-files: true
 
   deploy:
-    if: ${{ inputs.publish }}
+    if: ${{ github.event_name == 'push' || inputs.publish }}
     needs: sync
     runs-on: ubuntu-latest
     timeout-minutes: 8
