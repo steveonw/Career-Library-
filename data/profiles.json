@@ -1,28 +1,5 @@
 [
   {
-    "slug": "maya-chen",
-    "name": "Maya Chen",
-    "role": "Software Engineer",
-    "major": [
-      "Computer Science"
-    ],
-    "field": "Technology",
-    "level": "Early career",
-    "interests": [
-      "Accessibility",
-      "Education"
-    ],
-    "summary": "Maya enjoys creating accessible tools that help students learn.",
-    "journey": "Maya studied computer science, worked on a campus accessibility project, and joined a product engineering team.",
-    "advice": "Build small projects for real people and listen closely to their feedback.",
-    "skills": [
-      "JavaScript",
-      "Collaboration",
-      "Accessibility"
-    ],
-    "status": "Published"
-  },
-  {
     "slug": "jordan-rivera",
     "name": "Jordan Rivera",
     "role": "Environmental Scientist",
@@ -36,8 +13,8 @@
       "Research"
     ],
     "summary": "Jordan studies how local ecosystems respond to environmental changes.",
-    "journey": "Fieldwork as an undergraduate led Jordan to environmental monitoring.",
-    "advice": "Volunteer on research projects to discover which problems motivate you.",
+    "journey": "Undergraduate fieldwork led Jordan into environmental research.",
+    "advice": "Volunteer with research groups to explore possible science careers.",
     "skills": [
       "Field research",
       "Data analysis"
@@ -45,135 +22,25 @@
     "status": "Published"
   },
   {
-    "slug": "avery-patel",
-    "name": "Avery Patel",
-    "role": "UX Designer",
+    "slug": "maya-chen",
+    "name": "Maya Chen",
+    "role": "Software Engineer",
     "major": [
-      "Psychology",
-      "Design"
-    ],
-    "field": "Design",
-    "level": "Early career",
-    "interests": [
-      "Creativity",
-      "Technology"
-    ],
-    "summary": "Avery helps teams make digital experiences easier to use.",
-    "journey": "A psychology course introduced Avery to user research and product design.",
-    "advice": "Show your process, not just your final design.",
-    "skills": [
-      "Research",
-      "Prototyping"
-    ],
-    "status": "Published"
-  },
-  {
-    "slug": "noah-williams",
-    "name": "Noah Williams",
-    "role": "Data Analyst",
-    "major": [
-      "Mathematics"
+      "Computer Science"
     ],
     "field": "Technology",
     "level": "Early career",
     "interests": [
-      "Data",
-      "Sports"
+      "Education",
+      "Technology"
     ],
-    "summary": "Noah uses data to help organizations answer practical questions.",
-    "journey": "Statistics projects opened the door to an internship analyzing customer feedback.",
-    "advice": "Practice communicating what the numbers actually mean.",
+    "summary": "Maya builds accessible learning tools and enjoys solving technical problems.",
+    "journey": "A university accessibility project inspired Maya to pursue software engineering.",
+    "advice": "Start with small projects that solve real problems for people.",
     "skills": [
-      "SQL",
-      "Visualization"
-    ],
-    "status": "Published"
-  },
-  {
-    "slug": "leila-hassan",
-    "name": "Leila Hassan",
-    "role": "Nurse",
-    "major": [
-      "Nursing"
-    ],
-    "field": "Healthcare",
-    "level": "Mid career",
-    "interests": [
-      "Community",
-      "Health"
-    ],
-    "summary": "Leila supports patients and families through important decisions.",
-    "journey": "Leila discovered nursing through community volunteering.",
-    "advice": "Talk to working professionals before choosing a specialty.",
-    "skills": [
-      "Communication",
-      "Patient care"
-    ],
-    "status": "Published"
-  },
-  {
-    "slug": "elijah-brooks",
-    "name": "Elijah Brooks",
-    "role": "Public Relations Specialist",
-    "major": [
-      "Communications"
-    ],
-    "field": "Communications",
-    "level": "Early career",
-    "interests": [
-      "Writing",
-      "Community"
-    ],
-    "summary": "Elijah tells stories that connect organizations with their communities.",
-    "journey": "Writing for a student newspaper led to communications internships.",
-    "advice": "Keep examples of your work and ask for constructive criticism.",
-    "skills": [
-      "Writing",
-      "Media relations"
-    ],
-    "status": "Published"
-  },
-  {
-    "slug": "sophia-reed",
-    "name": "Sophia Reed",
-    "role": "Mechanical Engineer",
-    "major": [
-      "Mechanical Engineering"
-    ],
-    "field": "Engineering",
-    "level": "Mid career",
-    "interests": [
-      "Robotics",
-      "Making"
-    ],
-    "summary": "Sophia helps prototype machines and test designs.",
-    "journey": "A robotics club inspired Sophia to study engineering and manufacturing.",
-    "advice": "Be curious about how everyday objects work.",
-    "skills": [
-      "CAD",
-      "Testing"
-    ],
-    "status": "Published"
-  },
-  {
-    "slug": "owen-kim",
-    "name": "Owen Kim",
-    "role": "Teacher",
-    "major": [
-      "English"
-    ],
-    "field": "Education",
-    "level": "Early career",
-    "interests": [
-      "Writing",
-      "Education"
-    ],
-    "summary": "Owen designs lessons to help students find their voices.",
-    "journey": "Tutoring in college convinced Owen to pursue classroom teaching.",
-    "advice": "Spend time in a classroom before deciding on a teaching path.",
-    "skills": [
-      "Teaching",
-      "Planning"
+      "JavaScript",
+      "Accessibility",
+      "Teamwork"
     ],
     "status": "Published"
   }
