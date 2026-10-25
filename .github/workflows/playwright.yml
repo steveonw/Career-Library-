@@ -1,0 +1,52 @@
+name: P1 Playwright browser QA
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/playwright.yml'
+      - 'e2e/**'
+      - 'playwright.config.mjs'
+      - 'package.json'
+      - 'index.html'
+      - 'app.js'
+      - 'styles.css'
+      - 'lib/catalog.js'
+      - 'data/profiles.json'
+      - 'scripts/build-pages.mjs'
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  browser-qa:
+    name: Chromium and Firefox browser tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install pinned Playwright test dependency
+        run: npm install --no-audit --no-fund
+      - name: Install Chromium, Firefox and system dependencies
+        run: npx playwright install --with-deps chromium firefox
+      - name: Validate snapshot and build static site
+        run: npm run check
+      - name: Run real Chromium and Firefox Playwright tests
+        run: npm run test:e2e
+        env:
+          CI: 'true'
+      - name: Save Playwright HTML report, screenshots and failure traces
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-browser-report
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7
+          if-no-files-found: warn
