@@ -1,0 +1,5 @@
+# Fictional Career Library demo — deliberate synchronization request
+# Change this file to request a validated Notion import and GitHub Pages deploy.
+# Only for invented demo professionals; never connect a private production workspace.
+request: unpublish-check-2026-10-25
+expected-published: 2
