@@ -1,5 +1,6 @@
-# Fictional Career Library demo — deliberate synchronization request
-# Change this file to request a validated Notion import and GitHub Pages deploy.
-# Only for invented demo professionals; never connect a private production workspace.
-request: unpublish-check-2026-10-25
-expected-published: 2
+# Career Library independent fictional demo
+# Deliberate authorized sync from Notion, with build validation and GitHub Pages deployment.
+# Only fictional profiles; Lena Park remains Draft and must not be exported.
+request: p1-six-reviewed-fictional-profiles-2026-10-25
+expected-published: 8
+keep-draft: lena-park
