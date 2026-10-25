@@ -13,6 +13,13 @@ An **independent, not affiliated** concept prototype for the AI-Native Web Inter
 **Public demo:** https://steveonw.github.io/Career-Library-/  
 **Last verified unpublish deployment:** https://github.com/steveonw/Career-Library-/actions/runs/40170996392
 
+## P1 enhancements underway
+
+- Search ranks career-title matches first and explains whether a result matched a title, major, skill, or other field.
+- Small-screen layout, keyboard focus outlines, touch target sizes, and empty-state help improved.
+- Six additional fictional profiles have been prepared in **Notion as Draft**. They are **not public** and won't appear until an approved publishing sync.
+- Further mobile/keyboard screen testing and the applicant presentation packet are still pending; see [the current plan](docs/PROJECT_PLAN.md).
+
 ## What works
 
 - Mobile-friendly student directory with accessible cards.

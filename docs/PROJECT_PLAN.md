@@ -1,7 +1,7 @@
 # Career Library — Updated Project Plan
 
 **Last verified:** October 25, 2026 (EDT)  
-**Status:** P0 functional and publicly deployed; P1 application preparation remains  
+**Status:** P0 functional and publicly deployed; P1 frontend improvements implemented, fictional Draft content prepared, manual QA and application packet pending  
 **Application target:** Submit by October 28, before the October 29 deadline (confirm the exact time zone on the listing).
 
 > **Independent proof of concept.** This is an unsolicited student internship prototype, **not** the official Career Library website. All professionals and stories in the demo are fictional. Never use a real interview or someone's personal information without permission.
@@ -31,6 +31,14 @@ Prove the essential Career Library workflow: a nontechnical editor writes a Care
 | Real Career Library content / permissions / migration | **Not in P0** | No access or approval to republish real professional stories |
 
 **Current published fictional data (verified):** Maya Chen — Software Engineer; Jordan Rivera — Environmental Scientist. Lena Park — Wildlife Researcher is still in Notion as **Draft** and excluded from `data/profiles.json`.
+
+## P1 progress — October 25, 2026
+
+- **P1 frontend patch committed:** Search now ranks career-title matches ahead of major-only matches and shows a match-reason label; clearer empty results and missing/unpublished story feedback; 44px minimum filter controls, smaller-screen grid safeguards, keyboard focus styling and reduced-motion support. New Node regression cases cover ranking.
+- **P1 sample preparation:** Six new *fictional* Notion records created as **Draft**, not public: Amina Okafor (Occupational Therapist), Theo Bennett (Civil Engineer), Priya Shah (Product Designer), Elena Torres (Urban Planner), Rowan Ellis (Financial Analyst), Cass Morgan (Science Communicator). Schema options expanded without changing required importer properties.
+- **Content approval remains pending.** The public site still contains only Jordan Rivera and Maya Chen until those Draft records are reviewed, changed to Published and synchronized with explicit approval.
+- **Further manual QA pending:** Real-browser screenshots/interaction checks at 375px, 768px and desktop; keyboard-only walkthrough, browser console, zoom behavior, and a screen-reader spot-check. Passing code tests is not proof these checks were performed.
+- **P1 application packet pending:** One-page founder brief, polished walkthrough/evidence, and submission. Deadline October 29; aim before October 28.
 
 ## 3. P1 — Application-ready demo, timeboxed through October 28
 

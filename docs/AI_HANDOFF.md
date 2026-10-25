@@ -21,6 +21,14 @@
 | Actions dashboard | https://github.com/steveonw/Career-Library-/actions |
 | Pages settings | https://github.com/steveonw/Career-Library-/settings/pages |
 
+## Latest P1 checkpoint (October 25, 2026)
+
+New frontend regression patch: `lib/catalog.js` now exports `matchReason`, prioritizes title matches, and labels result matches; `app.js` and `index.html` handle a more useful empty state and clearer unavailable stories; `styles.css` improves small-screen grids, 44px touch targets, focus outlines and reduced-motion support. `tests/catalog.test.mjs` adds ranking assertions. **GitHub Actions status must be checked from the latest run before declaring deployment successful.**
+
+Six more fictional Notion records were created **as Draft only**: Amina Okafor, Theo Bennett, Priya Shah, Elena Torres, Rowan Ellis, Cass Morgan. Existing Lena Park remains Draft. The public snapshot should still contain only Jordan and Maya. Expanded Notion select/multi-select options do not change the six required importer property names.
+
+Pending: human review of Draft stories before public publishing; actual mobile/keyboard/screen-reader interaction QA; one-page application brief and demo media.
+
 ## What is **actually working**
 
 - Public static website with search, filters for **major**, **career field** and **experience level**, story cards, and per-story **`?story=slug`** views.
