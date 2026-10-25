@@ -43,27 +43,5 @@
       "Teamwork"
     ],
     "status": "Published"
-  },
-  {
-    "slug": "lena-park",
-    "name": "Lena Park",
-    "role": "Wildlife Researcher",
-    "major": [
-      "Biology"
-    ],
-    "field": "Science",
-    "level": "Early career",
-    "interests": [
-      "Animals",
-      "Conservation"
-    ],
-    "summary": "Lena investigates wildlife habitats and conservation methods.",
-    "journey": "Birdwatching and biology courses sparked Lena's interest in wildlife research.",
-    "advice": "Build practical experience by participating in field studies.",
-    "skills": [
-      "Observation",
-      "Research"
-    ],
-    "status": "Published"
   }
 ]
