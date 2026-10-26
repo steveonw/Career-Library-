@@ -22,6 +22,14 @@ This is a deliberately low-cost, independently verifiable starting point, not a 
 
 Credentials remain in GitHub Actions secrets rather than frontend JavaScript. Validation rejects incomplete records and drafts, and CI checks the catalog before publication. Sync currently requires explicit approval; the website does not update instantly when Notion changes.
 
+## What the real position still needs
+
+This is not simply a website redesign. The role calls for a scalable **content platform with a nontechnical publishing workflow**, an authorized migration of existing Notion stories, **interests-based discovery**, standalone **SEO-ready story pages**, **GA4 and UTM attribution**, and a documented foundation for future AI features.
+
+Our fictional prototype verifies one core slice: editing, categorizing, publishing and unpublishing stories through Notion and displaying them in a separate student-facing directory. It is **not** the complete production architecture. A TypeScript/Next.js frontend and dedicated CMS such as Sanity are options I would evaluate with the founder, rather than claim to have already implemented.
+
+See the [full job-description mapping](JOB_REQUIREMENTS_MAPPING.md) for each requirement's actual status.
+
 ## If selected: a practical delivery sequence
 
 **Discover:** Review the actual content inventory, editorial process, current Notion structure, URLs, consent and video rights, and who approves publication.
