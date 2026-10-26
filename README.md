@@ -9,6 +9,7 @@ An **independent, not affiliated** concept prototype for the AI-Native Web Inter
 - **[Updated project plan](docs/PROJECT_PLAN.md)** — P0 evidence, P1 steps for the October 29 application, definitions of done, and P2 production ideas.
 - **[AI handoff sheet](docs/AI_HANDOFF.md)** — ready-to-paste next-agent prompt, exact files/commands, safe publishing, workflows, risks and debugging lessons.
 - **[P1 content-review log](docs/P1_CONTENT_REVIEW.md)** — eight fictional profiles, review criteria, publishing evidence, remaining caveats.
+- **[Full internship requirement comparison](docs/JOB_REQUIREMENTS_MAPPING.md)** — what the demo proves and what the employer would still need built.
 - **[Application-ready packet](docs/APPLICATION_PACKET.md)** — short founder note, required architecture answer, AI workflow description, demo walkthrough, and submission checklist.
 - **[AI coding agent instructions](AGENTS.md)** — tiny entry point for code agents and new development sessions.
 
