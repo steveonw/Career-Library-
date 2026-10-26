@@ -16,6 +16,8 @@
 - **Notion publish and deploy evidence:** https://github.com/steveonw/Career-Library-/actions/runs/40173656688
 - **Browser test evidence:** https://github.com/steveonw/Career-Library-/actions/runs/40173739847 — 40/40 checks passed in Chromium and Firefox, across locally built and live Pages sites.
 
+See the [full requirements-to-evidence comparison](JOB_REQUIREMENTS_MAPPING.md) before describing any feature as complete.
+
 ## 1. Short note for the application / founder
 
 I'm applying for the AI-Native Web Intern opportunity because I like the problem Career Library is solving: helping students explore possible careers through people's journeys, while making it simple for your team to manage the stories.
@@ -31,15 +33,17 @@ I'd welcome the chance to help shape the actual platform with your team. The pro
 
 ## 2. Required short response
 
-**Question: "If you were moving Career Library from Notion to a scalable website, what would you build it with and why?"**
+**Question: “If you were moving Career Library from Notion to a scalable website, what would you build it with and why?”**
 
-I would separate **the editing experience** from **the student-facing website**. I'd first inventory Career Library's actual stories, taxonomy, images, videos, existing URLs, and approval process, then define a structured Career Story schema that can survive a change of CMS.
+I would begin by reviewing the existing Notion stories, videos, taxonomy, URLs and editorial process. Then I’d define a structured Career Story model covering professional consent, majors, career fields, experience, interests, skills, media, summaries, journeys, and draft/published status.
 
-For a purpose-built production version, I'd lean toward **Next.js and TypeScript** for accessible, SEO-friendly career pages, search and filtering, with a nontechnical **Sanity Studio** CMS for editing, review and publishing. Hosting on Vercel or another suitable platform would give a straightforward deployment pipeline. I'd migrate Notion content in batches, validate fields, preserve canonical URLs with redirects, add automated tests and monitoring, and implement GA4/UTM measurement after a privacy review.
+For production, I’d propose **Next.js and TypeScript** for fast, accessible, search-engine-friendly student pages, with **Sanity Studio** or a comparable CMS for nontechnical staff to create, categorize, preview and publish stories. I’d migrate approved Notion content in small validated batches, preserve existing links through redirects, and implement search and filters for majors, fields, experience and interests.
 
-I wouldn't force a CMS migration before understanding the team's constraints. As a proof, I built a lower-cost **Notion → read-only importer → validated public JSON → static student website** workflow. Editors can publish or unpublish stories without changing site code. That working experiment would help us choose whether to keep Notion temporarily or move to a dedicated CMS, based on actual editorial needs, scale, and maintenance cost.
+I’d add individual crawlable story URLs, appropriate metadata, and **GA4/UTM tracking after a student-privacy review**. Structured, attributable content would also support later AI-assisted discovery features without treating generated recommendations as facts.
 
-**Preparation note:** Next.js/Sanity are **proposed choices**, not technologies demonstrated in the existing prototype. The working demo uses HTML, CSS, JavaScript, the Notion API, GitHub Actions and Pages. Don't suggest you've already implemented the production stack.
+To test the central workflow first, I built a smaller prototype using **Notion, a read-only importer, GitHub Actions and a separate student website**. It proves that staff can publish and unpublish stories without touching code. That’s a working starting point, not the final platform; I would choose the permanent CMS together with the founder.
+
+**Preparation note:** Next.js and Sanity are production proposals, **not technologies used in the working demo**. Real content migration, a dedicated interests control, production SEO and GA4/UTM remain unimplemented.
 
 ## 3. Brief account of AI-assisted development
 
