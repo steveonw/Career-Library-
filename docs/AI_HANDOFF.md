@@ -29,6 +29,10 @@ Six more fictional Notion records were reviewed and **published**: Amina Okafor,
 
 Completed: six fictional Draft stories reviewed and approved, eight-story public deployment, automated Chromium/Firefox keyboard and responsive tests. Pending: manual screen-reader/200%-zoom and real-device gesture review, application submission and optional demo media.
 
+## Full employer posting alignment — October 26, 2026
+
+The applicant reshared the complete AI-Native Web Intern job description. Career Library is recruiting to build a **scalable content platform**, not merely redesign Notion pages. The independent demo remains a verified proof of the editor-to-website publishing workflow, **not** the completed employer system. Read [JOB_REQUIREMENTS_MAPPING.md](JOB_REQUIREMENTS_MAPPING.md) for exact requirements and gaps: a founder-approved CMS, approved real Notion migration, standalone SEO-ready stories, distinct interests filter, GA4/UTM, AI-ready provenance, staff documentation and training. The [application packet](APPLICATION_PACKET.md) was updated to propose Next.js/TypeScript with Sanity or comparable CMS as an **option to evaluate**, distinguishing this from the actually built Notion/static prototype.
+
 ## Application packet (prepared, not submitted)
 
 See [APPLICATION_PACKET.md](APPLICATION_PACKET.md) for copy-ready founder note, required architecture answer (Next.js/TypeScript/Sanity **proposed**, Notion/static **verified**), AI-assisted development description, portfolio summary, video storyboard, and checklist. Career Library's public internship listing expires **October 29, 2026**. Application submission requires the user's resume/LinkedIn and direct action; no external application has been submitted. **Prioritize submitting October 26–27 over new features.**
