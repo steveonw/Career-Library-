@@ -79,6 +79,7 @@ Created and iterated on an eight-story career discovery prototype with a Notion-
 ## 6. Submission checklist
 
 - [ ] Add **your resume or LinkedIn**. This is personal information that isn't in the repo; do not invent it.
+- [ ] Verify **your own U.S. work authorization** and availability for the part-time, remote U.S. internship (advertised October 15–December 15, 2026).
 - [ ] Open the application on the job posting and confirm the actual submission mechanism, email address (if any), and closing time.
 - [ ] Include the **demo URL** and GitHub repository URL.
 - [ ] Provide at least **one example you built** (the Career Library prototype); optional second project only if you can discuss it.
